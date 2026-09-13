@@ -90,7 +90,9 @@ app.use((req,res,next) => {
 });
 
 
-
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 app.use("/listings" , listingRouter);  // use the routes defined in listing.js for all routes starting with /listings
 app.use("/listings/:id/reviews",require("./routes/review.js"));  // use the routes defined in review.js for all routes starting with /listings/:id/reviews
